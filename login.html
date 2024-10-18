@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DomainPro - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kTc4XsvPzvK3+0hPr+M4I3YkZ/xekLB8LfL+R2Gq1GZyZH6Y8yy+jgkUrO9fV1+CXW6iYb6YKJ+7g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f4f4f9;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-container {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 100%;
+        max-width: 450px;
+    }
+
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    .input-group label {
+        font-size: 14px;
+        color: #555;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+        margin-top: 15px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+    .or-divider {
+        margin: 20px 0;
+        font-size: 14px;
+        color: #999;
+    }
+
+    .social-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #db4437;
+        color: white;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        margin-bottom: 15px;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .social-btn:hover {
+        background-color: #c23321;
+    }
+
+    .social-btn i {
+        margin-right: 8px;
+    }
+
+    .forgot-password {
+        font-size: 14px;
+        color: #007bff;
+        margin-top: 10px;
+        display: block;
+    }
+
+    .forgot-password:hover {
+        text-decoration: underline;
+    }
+
+    .register-link {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .register-link a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .register-link a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<body>
+    <div class="login-container">
+        <h2>Login to DomainPro</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <div class="or-divider">------------------ OR ------------------</div>
+
+        <button class="social-btn"><i class="fab fa-google"></i> Login with Google</button>
+
+        <a href="#" class="forgot-password">Forgot your password?</a>
+
+        <div class="register-link">
+            Don't have an account? <a href="reg-page.html">Register Here</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Basic validation (optional, you can enhance it)
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            if (email === "" || password === "") {
+                alert("Please fill in all fields.");
+            } else {
+                // Simulate successful login by redirecting to index.html
+                window.location.href = "index.html";
+            }
+        });
+    </script>
+</body>
+</html>
